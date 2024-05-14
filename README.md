@@ -15,33 +15,33 @@ Recipe Assistant is a Streamlit application that helps users find recipes based 
 
 <h2>Getting Started</h2>
 <h3>Prerequisites</h3>
-Python 3.x
-Streamlit
+Python 3.x <br/>
+Streamlit <br/>
 Pandas
 
 <h2>Installation</h2>
 <h4>Clone the repository:</h4>
-git clone https://github.com/yourusername/recipe-assistant.git
+git clone https://github.com/yourusername/recipe-assistant.git <br/>
 cd recipe-assistant
 
 <h4>Create and activate a virtual environment (optional but recommended):</h4>
-python -m venv venv
+python -m venv venv <br/>
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
 <h4>Install the required packages:</h4>
 pip install -r requirements.txt
 
 <h4>Download the dataset:</h4>
-Go to Kaggle - Recipe Dataset
-Download the recipes_82k.csv file.
+Go to Kaggle - Recipe Dataset <br/>
+Download the recipes_82k.csv file. <br/>
 Place the recipes_82k.csv file in the project directory.
 
 <h2>Running the App</h2>
 streamlit run app.py
 
 <h2>Usage</h2>
-Select your dietary preferences from the sidebar.
-Choose preparation methods and meal types.
-Enter the main ingredients you have available.
-Click "Generate Recipe" to find recipes that match your criteria.
+Select your dietary preferences from the sidebar. <br/>
+Choose preparation methods and meal types. <br/>
+Enter the main ingredients you have available. <br/>
+Click "Generate Recipe" to find recipes that match your criteria. <br/>
 View the detailed recipe information including cooking steps and ingredients.
