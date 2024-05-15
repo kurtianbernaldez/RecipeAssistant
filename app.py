@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 
 # Streamlit app configuration
-st.set_page_config(page_title="Recipe Assistant")
-st.title("Recipe Assistant")
+st.set_page_config(page_title="NutriChef")
+st.title("NutriChef")
 
 # Sidebar for user selections
 st.sidebar.header("Filter Recipes")
