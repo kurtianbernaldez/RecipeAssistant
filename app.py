@@ -16,7 +16,7 @@ selected_diets = st.sidebar.multiselect("Select your diets", sorted([
 
 # Define additional filters
 selected_prep = st.sidebar.multiselect("Select Preparation Type", [
-    "Kid Friendly", "Meal Prep Recipes","Slow Cooker Recipes", "Under 30 Minutes", "Whole 30 Recipes", "Air Fryer Recipes"
+    "Kid Friendly", "Meal Prep Recipes", "Slow Cooker Recipes", "Under 30 Minutes", "Whole 30 Recipes", "Air Fryer Recipes"
 ])
 
 # Define meals filter
@@ -44,19 +44,19 @@ def filter_recipes(data, user_query, selected_diets, selected_prep, selected_mea
     # Filter by diets (assuming diets are part of the tags column)
     if selected_diets:
         filtered_data = filtered_data[filtered_data['tags'].apply(
-            lambda x: any(diet.lower() in x.lower().split(', ') for diet in selected_diets if pd.notna(x))
+            lambda x: any(diet.lower() in x.lower() for diet in selected_diets if pd.notna(x))
         )]
 
     # Filter by additional filters
     if selected_prep:
         filtered_data = filtered_data[filtered_data['tags'].apply(
-            lambda x: any(prep.lower() in x.lower().split(', ') for prep in selected_prep if pd.notna(x))
+            lambda x: any(prep.lower() in x.lower() for prep in selected_prep if pd.notna(x))
         )]
 
     # Filter by meal type
     if selected_meals:
         filtered_data = filtered_data[filtered_data['tags'].apply(
-            lambda x: any(meal.lower() in x.lower().split(', ') for meal in selected_meals if pd.notna(x))
+            lambda x: any(meal.lower() in x.lower() for meal in selected_meals if pd.notna(x))
         )]
 
     return filtered_data
@@ -79,6 +79,7 @@ if st.sidebar.button("Generate Recipe"):
                 st.subheader(recipe['recipe_name'])
                 if pd.isna(recipe['cuisine']) or not recipe['cuisine']:
                     continue
+                st.write("Cuisine:", ', '.join(eval(recipe['cuisine'])))
                 st.write("Prep Time:", recipe['prep_time'])
                 st.write("Serves:", recipe['serves'])
                 st.write("Tags:", recipe['tags'] if pd.notna(recipe['tags']) else "None")
